@@ -5,17 +5,17 @@ export default {
         extend: {
             colors: {
                 bg: {
-                    DEFAULT: "#150d1f",
-                    surface: "#1f1530",
-                    elevated: "#2a1d40",
+                    DEFAULT: "#0a1410",
+                    surface: "#0f1f17",
+                    elevated: "#152a20",
                 },
                 accent: {
-                    DEFAULT: "#a855f7",
-                    glow: "#c084fc",
+                    DEFAULT: "#10b981",
+                    glow: "#34d399",
                 },
                 success: "#22c55e",
                 danger: "#f43f5e",
-                warning: "#fb923c",
+                warning: "#facc15",
             },
             fontFamily: {
                 mono: ["JetBrains Mono", "Consolas", "monospace"],
