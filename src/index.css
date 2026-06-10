@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-bg text-slate-100 font-sans antialiased;
+        background-image:
+            radial-gradient(
+                circle at 15% 25%,
+                rgba(168, 85, 247, 0.12) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 85% 75%,
+                rgba(244, 63, 94, 0.08) 0%,
+                transparent 50%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(192, 132, 252, 0.03) 0%,
+                transparent 100%
+            );
+        background-attachment: fixed;
+    }
+    code,
+    pre {
+        @apply font-mono;
+    }
+}
+
+@layer components {
+    .card {
+        @apply bg-bg-surface border border-slate-800 rounded-xl p-4 sm:p-6;
+    }
+    .card-elevated {
+        @apply bg-bg-elevated border border-slate-700 rounded-xl p-4 sm:p-6 shadow-lg;
+    }
+    .btn-primary {
+        @apply bg-accent hover:bg-accent-glow text-white font-medium px-4 py-2 rounded-lg transition-colors;
+    }
+    .btn-ghost {
+        @apply text-slate-100 hover:text-white hover:bg-bg-elevated font-medium px-4 py-2 rounded-lg transition-colors;
+    }
+    .input-base {
+        @apply bg-bg-elevated border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-accent transition-colors w-full;
+    }
+}
