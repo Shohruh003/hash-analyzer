@@ -4,7 +4,7 @@ import { sha384, sha512 } from "@noble/hashes/sha2";
 import { sha3_256, sha3_512, keccak_256 } from "@noble/hashes/sha3";
 import { blake2b, blake2s } from "@noble/hashes/blake2";
 import { blake3 } from "@noble/hashes/blake3";
-import md5 from "js-md5";
+import { md5 } from "js-md5";
 
 export type HashAlgorithm =
     | "MD5"
@@ -145,7 +145,7 @@ export function computeHash(algo: HashAlgorithm, input: string): string {
     const data = encoder.encode(input);
     switch (algo) {
         case "MD5":
-            return md5(input);
+            return md5.hex(input);
         case "SHA-1":
             return toHex(sha1(data));
         case "SHA-224":
@@ -178,10 +178,10 @@ export function computeHashBytes(
     const data = encoder.encode(input);
     switch (algo) {
         case "MD5": {
-            const hex = md5(input);
+            const hex = md5.hex(input);
             const bytes = new Uint8Array(hex.length / 2);
             for (let i = 0; i < bytes.length; i++) {
-                bytes[i] = parseInt(hex.substr(i * 2, 2), 16);
+                bytes[i] = parseInt(hex.substring(i * 2, i * 2 + 2), 16);
             }
             return bytes;
         }
