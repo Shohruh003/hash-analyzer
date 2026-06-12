@@ -83,7 +83,7 @@ export function CollisionDemo() {
                     {showDiff ? "Yashirish" : "Farqni ko'rsatish"}
                 </button>
                 {showDiff && (
-                    <div className="mt-4 font-mono text-xs bg-bg p-3 rounded-lg text-left">
+                    <div className="mt-4 font-mono text-xs bg-bg p-3 rounded-lg text-left break-all leading-6">
                         {Array.from(bytes1).map((b, i) => {
                             const diff = b !== bytes2[i];
                             return (
@@ -91,8 +91,8 @@ export function CollisionDemo() {
                                     key={i}
                                     className={
                                         diff
-                                            ? "bg-danger text-white px-1"
-                                            : "text-slate-300"
+                                            ? "bg-danger text-white px-0.5 mx-0.5 rounded"
+                                            : "text-slate-300 mx-0.5"
                                     }
                                 >
                                     {b.toString(16).padStart(2, "0")}
